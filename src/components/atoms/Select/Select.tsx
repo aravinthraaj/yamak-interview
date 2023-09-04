@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react"
-import "./Select.css"
+import "./Select.scss"
 
 interface CustomSelectProps {
   options: string[]
@@ -44,13 +44,13 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
   }
 
   return (
-    <div className="custom-select-container" ref={containerRef}>
-      <div className="custom-select-header" onClick={toggleOpen}>
+    <div className="select-container" ref={containerRef}>
+      <div className="select-header" onClick={toggleOpen}>
         {selectedOption}
         {isOpen ? <span>▲</span> : <span>▼</span>}
       </div>
       {isOpen && (
-        <ul className="custom-select-list">
+        <ul className="select-list">
           {options.map((option, index) => (
             <li
               key={index}

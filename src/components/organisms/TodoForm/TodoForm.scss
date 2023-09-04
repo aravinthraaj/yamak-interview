@@ -1,0 +1,28 @@
+.form {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  max-width: 600px;
+  width: 100%;
+  align-items: center;
+  .controls {
+    display: flex;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 426px) {
+  .form {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    max-width: unset;
+    width: 100%;
+    padding: 10px;
+    align-items: center;
+    .controls {
+      display: flex;
+      gap: 10px;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+.headerWrapper {
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  z-index: 5;
+  .header {
+    height: 64px;
+    padding: 14px 80px;
+    background-color: rgb(50, 50, 50);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    nav {
+      display: flex;
+      gap: 50px;
+      li {
+        text-decoration: none;
+        list-style-type: none;
+      }
+      .active {
+        color: rgb(42, 217, 42);
+      }
+    }
+    .burgerMenu {
+      visibility: hidden;
+    }
+  }
+}

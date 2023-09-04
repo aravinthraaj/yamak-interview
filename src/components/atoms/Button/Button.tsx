@@ -1,6 +1,7 @@
 "use client"
 import React, { FC, ButtonHTMLAttributes } from "react"
-import "./Button.css"
+import { IconTrashX, IconPlus } from "@tabler/icons-react"
+import "./Button.scss"
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: string
@@ -15,9 +16,19 @@ const Button: FC<ButtonProps> = ({
   const getVariant = (children: string) => {
     switch (variant) {
       case "add":
-        return <>{children}</>
+        return (
+          <>
+            <IconPlus color="#45a049" size={28} stroke={1} />
+            <div className="mobile">{children}</div>
+          </>
+        )
       case "remove":
-        return <>{children}</>
+        return (
+          <>
+            <IconTrashX color="#f44336" size={28} stroke={1} />
+            <div className="mobile">{children}</div>
+          </>
+        )
       case "error":
         return <>{children}</>
       default:

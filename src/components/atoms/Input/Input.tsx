@@ -1,14 +1,14 @@
 import React, { useState } from "react"
-import "./Input.css"
+import "./Input.scss"
 
-interface MaterialInputProps {
+interface InputProps {
   label: string
   type?: string
   value: string
   onChange: (value: string) => void
 }
 
-const MaterialInput: React.FC<MaterialInputProps> = ({
+const Input: React.FC<InputProps> = ({
   label,
   type = "text",
   value,
@@ -39,4 +39,4 @@ const MaterialInput: React.FC<MaterialInputProps> = ({
   )
 }
 
-export default MaterialInput
+export default Input

@@ -1,33 +1,5 @@
-// import React, { useEffect, useState } from 'react';
-// import './Toast.css';
-
-// interface ToastProps {
-//   message: string;
-//   duration?: number;
-// }
-
-// const Toast: React.FC<ToastProps> = ({ message, duration = 3000 }) => {
-//   const [show, setShow] = useState(false);
-
-//   useEffect(() => {
-//     setShow(true);
-//     const timer = setTimeout(() => setShow(false), duration);
-//     return () => clearTimeout(timer);
-//   }, [duration]);
-
-//   return (
-//     <div className="toast-container">
-//       <div className={`toast ${show ? 'show' : ''}`}>
-//         {message}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Toast;
-
 import React, { useEffect, useState } from "react"
-import "./Toast.css"
+import "./Toast.scss"
 
 interface ToastProps {
   message: string
@@ -42,7 +14,7 @@ const Toast: React.FC<ToastProps> = ({ message, duration = 3000, onHide }) => {
     setShow(true)
     const timer = setTimeout(() => {
       setShow(false)
-      onHide() // Call the callback to hide the toast
+      onHide()
     }, duration)
     return () => clearTimeout(timer)
   }, [duration, onHide])
