@@ -1,46 +1,108 @@
-# Getting Started with Create React App
+<div id="top"></div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
-## Available Scripts
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
 
-In the project directory, you can run:
+<h3 align="center">Yamak Interview Task</h3>
 
-### `npm start`
+  <p align="center">
+    Todo application
+    <br />
+    <br />
+    <a href="https://yamak-interview.netlify.app/">View Demo</a>
+    ·
+    <a href="https://github.com/aravinthraaj/yamak-interview/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/aravinthraaj/yamak-interview/issues">Request Feature</a>
+  </p>
+</div>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Libraries and packages used</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+  </ol>
+</details>
 
-### `npm test`
+<!-- ABOUT THE PROJECT -->
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## About The Project
 
-### `npm run build`
+[![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Todo application
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Libraries and packages used
 
-### `npm run eject`
+- [React.js](https://reactjs.org)
+- [Zustand (State Management)](https://zustand-demo.pmnd.rs/)
+- [Typescript](https://www.typescriptlang.org/)
+- [Tabler Icons](https://tabler.io/)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<!-- GETTING STARTED -->
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Getting Started
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+To get a local copy up and running follow these simple example steps.
 
-## Learn More
+### Prerequisites
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+To run this project, You’ll need to have
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- npm
+  ```sh
+  Node v20.5.1 or greater
+  npm 9.8.0 or greater
+  ```
+
+### Installation and Setup
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/aravinthraaj/yamak-interview.git
+   ```
+2. Install packages
+   ```sh
+   npm install or yarn
+   ```
+3. To start server
+   ```sh
+    npm start or yarn dev
+   ```
+4. To visit App
+   ```sh
+   localhost:3000
+   ```
+
+### Time took for the task
+
+```sh
+Approximately 5-6 hours
+```
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/aravinthraaj
+[product-screenshot]: Screenshot.png
