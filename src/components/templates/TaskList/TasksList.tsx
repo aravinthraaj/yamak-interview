@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 
 import "./TaskList.scss"
 // import 'global.scss'
@@ -7,15 +7,26 @@ import { useTaskStore } from "store/todoStore"
 
 import Button from "components/atoms/Button"
 import Checkbox from "components/atoms/Checkbox"
+import Toast from "components/atoms/Toast"
 
 const TaskList: React.FC = () => {
   const tasks = useTaskStore((state) => state.tasks)
   const toggleTask = useTaskStore((state) => state.toggleTask)
   const removeTask = useTaskStore((state) => state.removeTask)
+  const [showremoveToast, setRemoveToast] = useState(false)
 
   useEffect(() => {
     console.log("TaskList component updated")
   }, [tasks])
+
+  const handleToastHide = () => {
+    setRemoveToast(false)
+  }
+
+  const removeHandler = (id: string) => {
+    removeTask(id)
+    setRemoveToast(true)
+  }
 
   return (
     <div className="taskList">
@@ -33,7 +44,7 @@ const TaskList: React.FC = () => {
             </div>
             <Button
               variant="remove"
-              onClick={() => removeTask(task.id)}
+              onClick={() => removeHandler(task.id)}
               className="button"
             >
               Remove
@@ -41,6 +52,14 @@ const TaskList: React.FC = () => {
           </li>
         ))}
       </ul>
+      {showremoveToast && (
+        <Toast
+          message="Task removed"
+          duration={5000}
+          onHide={handleToastHide}
+          color="orange"
+        />
+      )}
     </div>
   )
 }

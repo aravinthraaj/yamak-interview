@@ -31,6 +31,12 @@
       border-top-left-radius: 2px;
       border-top-right-radius: 2px;
       animation: loader-animation 0s linear forwards;
+      &.green {
+        background-color: #4caf50;
+      }
+      &.orange {
+        background-color: #ff9500;
+      }
     }
     .toast-message {
       padding: 16px;

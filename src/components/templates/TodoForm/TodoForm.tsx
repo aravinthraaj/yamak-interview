@@ -16,10 +16,13 @@ const TodoForm: React.FC = () => {
   const [text, setText] = useState("")
   const [priority, setPriority] = useState("low")
   const [showToast, setShowToast] = useState(false)
+  const [showsuccessToast, setSuccessShowToast] = useState(false)
+
   const addTask = useTaskStore((state) => state.addTask)
 
   const handleToastHide = () => {
     setShowToast(false)
+    setSuccessShowToast(false)
   }
 
   const handleSelectChange = (selectedOption: string) => {
@@ -31,6 +34,7 @@ const TodoForm: React.FC = () => {
     if (text) {
       addTask(text, priority)
       setText("")
+      setSuccessShowToast(true)
     } else {
       setShowToast(true)
     }
@@ -54,6 +58,14 @@ const TodoForm: React.FC = () => {
           message="Task cannot be empty"
           duration={5000}
           onHide={handleToastHide}
+        />
+      )}
+      {showsuccessToast && (
+        <Toast
+          message="Task added succesfully"
+          duration={5000}
+          onHide={handleToastHide}
+          color="green"
         />
       )}
     </form>
