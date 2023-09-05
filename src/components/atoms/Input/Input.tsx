@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import "./Input.scss"
+// import 'global.scss'
 
 const Input: React.FC<InputProps> = ({
   label,

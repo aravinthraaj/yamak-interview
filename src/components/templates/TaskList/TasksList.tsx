@@ -1,6 +1,7 @@
 import React, { useEffect } from "react"
 
 import "./TaskList.scss"
+// import 'global.scss'
 
 import { useTaskStore } from "store/todoStore"
 

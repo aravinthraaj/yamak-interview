@@ -8,6 +8,7 @@ import Input from "components/atoms/Input"
 import { useTaskStore } from "store/todoStore"
 
 import "./TodoForm.scss"
+// import 'global.scss'
 
 const TodoForm: React.FC = () => {
   const options: string[] = ["low", "medium", "high"]

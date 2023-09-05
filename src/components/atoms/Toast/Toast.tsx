@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 
 import "./Toast.scss"
+// import 'global.scss'
 
 const Toast: React.FC<ToastProps> = ({ message, duration = 3000, onHide }) => {
   const [show, setShow] = useState(false)

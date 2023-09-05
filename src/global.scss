@@ -1,0 +1,430 @@
+.App {
+  background-color: #ffffff;
+  height: calc(100vh - 75px);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  main {
+    margin-top: 75px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+// X ------------- Button ------------ X
+
+.button {
+  color: white;
+  padding: 0px 24px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  &:active {
+    transform: scale(0.97);
+    transition: all 0.1s ease;
+  }
+  &.add {
+    border: 1px solid #4caf50;
+    color: #4caf50;
+    &:hover {
+      border: 1.5px solid #37a23c;
+      color: #37a23c;
+    }
+  }
+  &.remove {
+    border: 1px solid #f44336;
+    color: #f44336;
+    &:hover {
+      border: 1.5px solid #da190b;
+      color: #da190b;
+    }
+  }
+  &.error {
+    border: 1px solid #ff5722;
+    color: #ff5722;
+    &:hover {
+      border: 1.5px solid #e64a19;
+      color: #e64a19;
+    }
+  }
+}
+
+@media (max-width: 426px) {
+  .button {
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 1px;
+    font-size: 16px;
+    border: none !important;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+    transition: all 0.3s ease;
+    .mobile {
+      display: none;
+      stroke-width: 2px;
+    }
+    svg {
+      stroke-width: 2px;
+    }
+    &.remove svg {
+      width: 38px;
+      height: 38px;
+    }
+  }
+}
+
+// X ------------- Checkbox ------------ X
+.checkbox {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid #cccccc;
+  position: relative;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+  transform: rotate(305deg);
+  &.checked {
+    border-color: #007bff;
+    .tick-mark {
+      opacity: 1;
+    }
+  }
+  .tick-mark {
+    position: absolute;
+    width: 12px;
+    height: 7px;
+    border: 3px solid #14bb0b;
+    border-top: 0;
+    border-left: 0;
+    transform: rotateY(180deg);
+
+    top: 50%;
+    left: 50%;
+    margin-top: -4px;
+    margin-left: -6px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+}
+
+@media (max-width: 426px) {
+  .checkbox {
+    width: 24px;
+    height: 18px;
+  }
+
+  .tick-mark {
+    width: 10px;
+    height: 6px;
+    border: 2px solid #14bb0b;
+    top: 50%;
+    left: 50%;
+    margin-top: -4px;
+    margin-left: -4px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .checkbox.checked .tick-mark {
+    opacity: 1;
+  }
+}
+
+// X ------------- Input ------------ X
+.input-wrapper {
+  position: relative;
+  width: 100%;
+  .input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    background: transparent;
+  }
+  .underline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #3b3b3b;
+  }
+  label {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    color: #999;
+    transition: all 0.3s ease;
+  }
+
+  label.float {
+    transform: translateY(-24px);
+    font-size: 12px;
+    color: #3b3b3b;
+  }
+}
+
+// X ------------- Select ------------ X
+.select-container {
+  position: relative;
+  width: 100px;
+
+  .select-header {
+    border: 1px solid #ccc;
+    padding: 10px;
+    cursor: pointer;
+    span {
+      position: absolute;
+      right: 10px;
+    }
+  }
+  .select-list {
+    position: absolute;
+    width: 100%;
+    border: 1px solid #ccc;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+    background-color: #ffffff;
+
+    li {
+      padding: 10px;
+      cursor: pointer;
+      list-style-type: none;
+      &.selected {
+        background-color: #ccc;
+      }
+    }
+  }
+}
+
+// X ------------- Toast ------------ X
+.toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  .toast {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border-radius: 2px;
+    opacity: 0;
+    transform: translateX(100%);
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    &.show {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .loader-bar {
+      position: relative;
+      height: 4px;
+      background-color: #ffffff;
+      top: 0px;
+    }
+    .loader-fill {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgb(255, 63, 63);
+      border-top-left-radius: 2px;
+      border-top-right-radius: 2px;
+      animation: loader-animation 0s linear forwards;
+    }
+    .toast-message {
+      padding: 16px;
+    }
+  }
+}
+
+@keyframes loader-animation {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+// X ------------- Header ------------ X
+.headerWrapper {
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  z-index: 5;
+  .header {
+    height: 64px;
+    padding: 14px 80px;
+    background-color: rgb(50, 50, 50);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    nav {
+      display: flex;
+      gap: 50px;
+      li {
+        text-decoration: none;
+        list-style-type: none;
+      }
+      .active {
+        color: rgb(42, 217, 42);
+      }
+    }
+    .burgerMenu {
+      visibility: hidden;
+    }
+  }
+}
+
+// X ------------- TaskList ------------ X
+.taskList {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  ul {
+    list-style-type: none;
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      padding: 5px 0px;
+      .task {
+        max-width: 400px;
+        width: 400px;
+      }
+      .strike {
+        position: relative;
+      }
+      .strike::after {
+        content: " ";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: rgba(50, 50, 50, 0.655);
+        animation-name: strike;
+        animation-duration: 0.4s;
+        animation-timing-function: linear;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+      }
+      .button {
+        // align-self: flex-end;
+      }
+    }
+  }
+}
+
+@keyframes strike {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@media (max-width: 426px) {
+  .taskList {
+    width: 100%;
+    max-width: unset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 10px;
+    ul {
+      list-style-type: none;
+      margin: 0px;
+      padding: 0px;
+      width: 100%;
+      li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0px;
+        padding: 0px;
+
+        gap: 15px;
+        padding: 5px 0px;
+        .task {
+          max-width: unset;
+          width: 100%;
+        }
+        .strike {
+          position: relative;
+        }
+        .strike::after {
+          content: " ";
+          position: absolute;
+          top: 50%;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background: rgba(50, 50, 50, 0.655);
+          animation-name: strike;
+          animation-duration: 0.4s;
+          animation-timing-function: linear;
+          animation-iteration-count: 1;
+          animation-fill-mode: forwards;
+        }
+        .button {
+          // align-self: flex-end;
+        }
+      }
+    }
+  }
+}
+
+// X ------------- TodoForm ------------ X
+.form {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  max-width: 600px;
+  width: 100%;
+  align-items: center;
+  .controls {
+    display: flex;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 426px) {
+  .form {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    max-width: unset;
+    width: 100%;
+    padding: 10px;
+    align-items: center;
+    .controls {
+      display: flex;
+      gap: 10px;
+    }
+  }
+}

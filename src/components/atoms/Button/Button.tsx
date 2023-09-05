@@ -1,6 +1,7 @@
 "use client"
 import React, { FC, ButtonHTMLAttributes } from "react"
 import "./Button.scss"
+// import 'global.scss'
 
 import { IconTrashX, IconPlus } from "@tabler/icons-react"
 

@@ -1,5 +1,7 @@
 import React, { useState, useRef, useEffect } from "react"
 import "./Select.scss"
+// import 'global.scss'
+
 
 const CustomSelect: React.FC<CustomSelectProps> = ({
   options,

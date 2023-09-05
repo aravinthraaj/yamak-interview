@@ -1,6 +1,7 @@
 import React, { FC, useState } from "react"
 
 import "./Checkbox.scss"
+// import 'global.scss'
 
 const Checkbox: FC<CheckboxProps> = ({ onChange, checked = false }) => {
   const [isChecked, setIsChecked] = useState(checked)

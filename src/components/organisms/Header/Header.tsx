@@ -2,6 +2,7 @@
 import React from "react"
 
 import "./Header.scss"
+// import 'global.scss'
 
 import { useNavigate, useLocation } from "react-router-dom"
 
