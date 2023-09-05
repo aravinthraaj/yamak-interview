@@ -1,14 +1,10 @@
 "use client"
 import React, { FC, ButtonHTMLAttributes } from "react"
-import { IconTrashX, IconPlus } from "@tabler/icons-react"
 import "./Button.scss"
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  children: string
-  variant?: string
-}
+import { IconTrashX, IconPlus } from "@tabler/icons-react"
 
-const Button: FC<ButtonProps> = ({
+const Button: FC<ButtonProps & ButtonHTMLAttributes<HTMLButtonElement>> = ({
   children,
   variant = "default",
   ...props

@@ -1,11 +1,6 @@
 import React, { useEffect, useState } from "react"
-import "./Toast.scss"
 
-interface ToastProps {
-  message: string
-  duration?: number
-  onHide: () => void
-}
+import "./Toast.scss"
 
 const Toast: React.FC<ToastProps> = ({ message, duration = 3000, onHide }) => {
   const [show, setShow] = useState(false)

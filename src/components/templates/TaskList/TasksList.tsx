@@ -1,12 +1,16 @@
 import React, { useEffect } from "react"
-import { useTaskStore } from "store/todoStore"
-import Button from "components/atoms/Button"
 
 import "./TaskList.scss"
+
+import { useTaskStore } from "store/todoStore"
+
+import Button from "components/atoms/Button"
 import Checkbox from "components/atoms/Checkbox"
 
 const TaskList: React.FC = () => {
-  const { tasks, toggleTask, removeTask } = useTaskStore((state: any) => state)
+  const tasks = useTaskStore((state) => state.tasks)
+  const toggleTask = useTaskStore((state) => state.toggleTask)
+  const removeTask = useTaskStore((state) => state.removeTask)
 
   useEffect(() => {
     console.log("TaskList component updated")
@@ -15,7 +19,7 @@ const TaskList: React.FC = () => {
   return (
     <div className="taskList">
       <ul>
-        {tasks.map((task: any) => (
+        {tasks.map((task: Task) => (
           <li key={task.id}>
             <Checkbox
               onChange={() => toggleTask(task.id)}

@@ -1,13 +1,6 @@
 import React, { useState } from "react"
 import "./Input.scss"
 
-interface InputProps {
-  label: string
-  type?: string
-  value: string
-  onChange: (value: string) => void
-}
-
 const Input: React.FC<InputProps> = ({
   label,
   type = "text",
@@ -15,9 +8,9 @@ const Input: React.FC<InputProps> = ({
   onChange,
 }) => {
   const [isFocused, setIsFocused] = useState(false)
-
   const handleFocus = () => setIsFocused(true)
   const handleBlur = () => setIsFocused(false)
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>
     onChange(e.target.value)
 

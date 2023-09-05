@@ -9,7 +9,7 @@ import { useTaskStore } from "store/todoStore"
 
 import "./TodoForm.scss"
 
-const TodoForm = () => {
+const TodoForm: React.FC = () => {
   const options: string[] = ["low", "medium", "high"]
 
   const [text, setText] = useState("")

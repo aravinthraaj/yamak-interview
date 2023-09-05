@@ -2,20 +2,6 @@
 import { create } from "zustand"
 import Cookies from "js-cookie"
 
-interface Task {
-  id: string
-  text: string
-  isComplete: boolean
-  priority: string
-}
-
-type TaskState = {
-  tasks: Task[]
-  addTask: (text: string, priority: string) => void
-  toggleTask: (id: string) => void
-  removeTask: (id: string) => void
-}
-
 const getInitialTasks = (): Task[] => {
   const cookieData = Cookies.get("tasks")
   return cookieData ? JSON.parse(cookieData) : []

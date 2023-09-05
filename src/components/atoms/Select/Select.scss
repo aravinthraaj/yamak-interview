@@ -11,24 +11,23 @@
       right: 10px;
     }
   }
-}
+  .select-list {
+    position: absolute;
+    width: 100%;
+    border: 1px solid #ccc;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+    background-color: #ffffff;
 
-.select-list {
-  position: absolute;
-  width: 100%;
-  border: 1px solid #ccc;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  z-index: 1;
-  background-color: #ffffff;
-
-  li {
-    padding: 10px;
-    cursor: pointer;
-    list-style-type: none;
-    &.selected {
-      background-color: #ccc;
+    li {
+      padding: 10px;
+      cursor: pointer;
+      list-style-type: none;
+      &.selected {
+        background-color: #ccc;
+      }
     }
   }
 }

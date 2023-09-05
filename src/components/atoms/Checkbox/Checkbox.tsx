@@ -1,10 +1,6 @@
 import React, { FC, useState } from "react"
-import "./Checkbox.scss"
 
-interface CheckboxProps {
-  onChange?: (checked: boolean) => void
-  checked?: boolean
-}
+import "./Checkbox.scss"
 
 const Checkbox: FC<CheckboxProps> = ({ onChange, checked = false }) => {
   const [isChecked, setIsChecked] = useState(checked)
@@ -20,7 +16,7 @@ const Checkbox: FC<CheckboxProps> = ({ onChange, checked = false }) => {
 
   return (
     <div
-      className={`custom-checkbox ${isChecked ? "checked" : ""}`}
+      className={`checkbox ${isChecked ? "checked" : ""}`}
       onClick={toggleCheck}
     >
       <div className="tick-mark"></div>

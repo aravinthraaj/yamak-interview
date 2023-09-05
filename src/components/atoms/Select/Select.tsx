@@ -1,12 +1,6 @@
 import React, { useState, useRef, useEffect } from "react"
 import "./Select.scss"
 
-interface CustomSelectProps {
-  options: string[]
-  defaultValue: string
-  onChange: (selectedOption: string) => void
-}
-
 const CustomSelect: React.FC<CustomSelectProps> = ({
   options,
   defaultValue,

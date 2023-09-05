@@ -1,6 +1,8 @@
 "use client"
 import React from "react"
+
 import "./Header.scss"
+
 import { useNavigate, useLocation } from "react-router-dom"
 
 const Header = () => {
@@ -18,8 +20,8 @@ const Header = () => {
             Home
           </li>
           <li
-            className={location.pathname === "/tasklist" ? "active" : ""}
-            onClick={() => navigate("/tasklist")}
+            className={location.pathname === "/todo" ? "active" : ""}
+            onClick={() => navigate("/todo")}
           >
             Todo
           </li>
