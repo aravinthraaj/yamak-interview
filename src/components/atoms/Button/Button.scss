@@ -17,6 +17,15 @@
     transform: scale(0.97);
     transition: all 0.1s ease;
   }
+  &.default {
+    border: 1px solid #259efa;
+    color: #259efa;
+    padding: 10px 20px;
+    &:hover {
+      border: 1.5px solid #006bbd;
+      color: #006bbd;
+    }
+  }
   &.add {
     border: 1px solid #4caf50;
     color: #4caf50;
@@ -36,6 +45,7 @@
   &.error {
     border: 1px solid #ff5722;
     color: #ff5722;
+    padding: 10px 20px;
     &:hover {
       border: 1.5px solid #e64a19;
       color: #e64a19;

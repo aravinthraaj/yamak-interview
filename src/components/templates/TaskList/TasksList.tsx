@@ -15,7 +15,7 @@ const TaskList: React.FC = () => {
 
   useEffect(() => {
     console.log("TaskList component updated")
-  })
+  }, [tasks])
 
   return (
     <div className="taskList">
